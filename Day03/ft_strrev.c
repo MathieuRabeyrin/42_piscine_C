@@ -30,4 +30,5 @@ int main(int argc, char **argv)
     printf("Avant fonction : %s\n", str);
     ft_strrev(str);
     printf("Apres fonction : %s\n", str);
+    return (0);
 }
