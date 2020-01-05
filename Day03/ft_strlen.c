@@ -13,6 +13,6 @@ int main(int argc, char **argv)
     char str[] = "Hello World";
     char length = ft_strlen(str);
     
-    printf("%d", length);
+    printf("Longueur de de la string : %d", length);
     return (0);
 }
