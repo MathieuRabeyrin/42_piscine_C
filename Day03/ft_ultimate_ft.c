@@ -25,7 +25,6 @@ int main(int argc, char **argv)
     ptr6 = &ptr5;
     ptr7 = &ptr6;
     ptr8 = &ptr7;
-    
     ft_ultimate_ft(&ptr8);
     printf("%d", nb);
     return (0);
