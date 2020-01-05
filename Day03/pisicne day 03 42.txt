@@ -1,0 +1,206 @@
+exercice 00 ft_ft	proto: void ft_ft(int *nbr)
+
+void ft_ft(int *nbr)
+{
+    *nbr = 42;
+}
+
+exercice 01 ft_ultimate_ft	proto: void ft_ultimate_ft(int *********nbr)
+
+#include <stdio.h>
+
+void ft_ultimate_ft(int *********nbr)
+{
+    *********nbr = 42;
+}
+
+int main(int argc, char **argv)
+{
+    int nb = 0;
+    int *ptr1 = NULL;
+    int **ptr2 = NULL;
+    int ***ptr3 = NULL;
+    int ****ptr4 = NULL;
+    int *****ptr5 = NULL;
+    int ******ptr6 = NULL;
+    int *******ptr7 = NULL;
+    int ********ptr8 = NULL;
+    
+    ptr1 = &nb;
+    ptr2 = &ptr1;
+    ptr3 = &ptr2;
+    ptr4 = &ptr3;
+    ptr5 = &ptr4;
+    ptr6 = &ptr5;
+    ptr7 = &ptr6;
+    ptr8 = &ptr7;
+    
+    ft_ultimate_ft(&ptr8);
+    printf("%d\n", nb);
+    return (0);
+}
+
+exercice 02 ft_swap	proto: void ft_swap(int *a, int *b)
+
+void ft_swap(int *a, int *b)
+{
+    //version 1;
+    int c = 0;
+    
+    c = *a;
+    *a = *b;
+    *b = c;
+    
+    //version 2 
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
+}
+
+int main(int argc, char **argv)
+{
+    int a = 1;
+    int b = 2;
+    
+    printf("Valeur de A: %d ; Valeur de B: %d\n", a, b);
+    ft_swap(&a, &b);
+    printf("Valeur de A: %d ; Valeur de B: %d\n", a, b);
+    return (0);
+}
+
+exerice 03 ft_div_mod	proto: void ft_div_mod(int a, int b, int *div, int *mod)
+
+void ft_div_mod(int a, int b, int *div, int *mod)
+{
+    *div = a / b;
+    *mod = a % b;
+}
+
+exerice 04 ft_ultimate_div_mod	proto: void ft_ultimate_div_mod(int *a, int *b)
+
+void ft_ultimate_div_mod(int *a, int *b)
+{
+    int mod = 0;
+
+    mod = *a % *b;
+    *a = *a / *b;
+    *b = mod;
+}
+
+exercice 05 ft_putstr	proto: void ft_putstr(char *str)
+
+#include <unistd.h>
+
+int ft_strlen(char *str)
+{
+    int index = 0;
+    
+    for (; str[index] != '\0'; index++);
+    return (index);
+}
+
+void ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
+
+void ft_putstr(char *str)
+{
+    //version 1
+    write(1, str, ft_strlen(str));
+
+    //version 2
+    for (; *str != '\0'; *str++)
+        ft_putchar(*str);
+}
+
+exercice 06 ft_strlen	proto: int ft_strlen(char *str)
+
+int ft_strlen(char *str)
+{
+    int index = 0;
+    
+    for (; str[index] != '\0'; index++);
+    return (index);
+}
+
+exercice 07 ft_strrev	proto: char *ft_strrev(char *str)
+
+int ft_strlen(char *str)
+{
+    int index = 0;
+    
+    for (; str[index] != '\0'; index++);
+    return (index);
+}
+
+char *ft_strrev(char *str)
+{
+    int i = 0;
+    int j = ft_strlen(str) - 1;
+    char save = 0;
+    
+    for (; i < j; i++) {
+        save = str[i];
+        str[i] = str[j];
+        str[j] = save;
+        j--;
+    }
+    return (str);
+}
+
+exercice 08 ft_atoi	proto: int ft_atoi(char *str)
+
+int ft_atoi(char *str)
+{
+    int result = 0;
+    int negative = 1;
+    
+    if (*str == '+' || *str == '-') {
+        if (*str == '-')
+            negative = -1;
+        *str++;
+    }
+    for (; *str != '\0'; *str++) {
+        if (*str >= '0' && *str <= '9') {
+            result *= 10;
+            result += *str - '0';
+        }else {
+            break;
+        }
+    }
+    return (result * negative);
+}
+
+exercice 09 ft_sort_integer_table	proto: void ft_sort_integer_table(int *tab, int size);
+
+#include <stdio.h>
+
+void ft_sort_integer_table(int *tab, int size)
+{
+    int save = 0;
+    int j = size - 1;
+    
+    for (int i = size - 1; i >= 0;) {
+        for (; j >= 0; j--) {
+            if (tab[j] > save) {
+                save = tab[j];
+                tab[j] = tab[i];
+                tab[i] = save;
+            }
+        }
+        i--;
+        j = i;
+        save = 0;
+    }
+}
+
+int main(int argc, char **argv)
+{
+    int str[] = {1, 2, 0, 0, 4, 8, 7, 8, 9};
+
+    ft_sort_integer_table(str, 9);
+    for (int i = 0; i < 9; i++)
+        printf("%d", str[i]);
+    return (0);
+}
