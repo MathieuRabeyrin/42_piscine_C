@@ -6,7 +6,6 @@ int ft_strlen(char *str)
     
     for (; str[index] != '\0'; index++);
     return (index);
-    
 }
 
 void ft_print_program_name(int argc, char **argv)
