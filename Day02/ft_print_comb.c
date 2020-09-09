@@ -17,7 +17,7 @@ void ft_print_comb(void)
                 ft_putchar(left);
                 ft_putchar(mid);
                 ft_putchar(right);
-                if (left != '7' && mid != '8' && right != '9') {
+                if (left != '7' || mid != '8' || right != '9') {
                     ft_putchar(',');
                     ft_putchar(' ');
                 }
