@@ -13,7 +13,7 @@ void ft_print_comb(void)
     
     for (; left < '8';) {
         for (; mid < '9';) {
-            for (; right < ':'; right++) {
+            for (; right <= '9'; right++) {
                 ft_putchar(left);
                 ft_putchar(mid);
                 ft_putchar(right);
