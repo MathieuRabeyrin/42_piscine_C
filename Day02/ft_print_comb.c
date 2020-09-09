@@ -11,8 +11,8 @@ void ft_print_comb(void)
     char mid = '1';
     char right = '2';
     
-    for (; left < '8';) {
-        for (; mid < '9';) {
+    for (; left <= '7';) {
+        for (; mid <= '8';) {
             for (; right <= '9'; right++) {
                 ft_putchar(left);
                 ft_putchar(mid);
